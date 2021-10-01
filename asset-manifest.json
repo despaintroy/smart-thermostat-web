@@ -1,22 +1,20 @@
 {
   "files": {
-    "main.css": "/smart-thermostat-web/static/css/main.beae1b95.chunk.css",
-    "main.js": "/smart-thermostat-web/static/js/main.e1c3ff94.chunk.js",
-    "main.js.map": "/smart-thermostat-web/static/js/main.e1c3ff94.chunk.js.map",
-    "runtime-main.js": "/smart-thermostat-web/static/js/runtime-main.fa417548.js",
-    "runtime-main.js.map": "/smart-thermostat-web/static/js/runtime-main.fa417548.js.map",
-    "static/js/2.fd70baed.chunk.js": "/smart-thermostat-web/static/js/2.fd70baed.chunk.js",
-    "static/js/2.fd70baed.chunk.js.map": "/smart-thermostat-web/static/js/2.fd70baed.chunk.js.map",
-    "static/js/3.6ea29d08.chunk.js": "/smart-thermostat-web/static/js/3.6ea29d08.chunk.js",
-    "static/js/3.6ea29d08.chunk.js.map": "/smart-thermostat-web/static/js/3.6ea29d08.chunk.js.map",
+    "main.css": "/smart-thermostat-web/static/css/main.4708b693.chunk.css",
+    "main.js": "/smart-thermostat-web/static/js/main.3ab6e12a.chunk.js",
+    "main.js.map": "/smart-thermostat-web/static/js/main.3ab6e12a.chunk.js.map",
+    "runtime-main.js": "/smart-thermostat-web/static/js/runtime-main.3eaf3db8.js",
+    "runtime-main.js.map": "/smart-thermostat-web/static/js/runtime-main.3eaf3db8.js.map",
+    "static/js/2.02b9a674.chunk.js": "/smart-thermostat-web/static/js/2.02b9a674.chunk.js",
+    "static/js/2.02b9a674.chunk.js.map": "/smart-thermostat-web/static/js/2.02b9a674.chunk.js.map",
     "index.html": "/smart-thermostat-web/index.html",
-    "static/css/main.beae1b95.chunk.css.map": "/smart-thermostat-web/static/css/main.beae1b95.chunk.css.map",
-    "static/js/2.fd70baed.chunk.js.LICENSE.txt": "/smart-thermostat-web/static/js/2.fd70baed.chunk.js.LICENSE.txt"
+    "static/css/main.4708b693.chunk.css.map": "/smart-thermostat-web/static/css/main.4708b693.chunk.css.map",
+    "static/js/2.02b9a674.chunk.js.LICENSE.txt": "/smart-thermostat-web/static/js/2.02b9a674.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.fa417548.js",
-    "static/js/2.fd70baed.chunk.js",
-    "static/css/main.beae1b95.chunk.css",
-    "static/js/main.e1c3ff94.chunk.js"
+    "static/js/runtime-main.3eaf3db8.js",
+    "static/js/2.02b9a674.chunk.js",
+    "static/css/main.4708b693.chunk.css",
+    "static/js/main.3ab6e12a.chunk.js"
   ]
 }

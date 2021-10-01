@@ -1,0 +1,2 @@
+(this["webpackJsonpsmart-thermostat-web"]=this["webpackJsonpsmart-thermostat-web"]||[]).push([[0],{10:function(e,t,r){"use strict";r.r(t);r(3);var s=r(1),c=r.n(s),n=r(4),a=r.n(n),o=r(0);var d=function(){return Object(o.jsx)("div",{className:"App",children:Object(o.jsx)("header",{className:"App-header",children:Object(o.jsx)("p",{children:"Hello World"})})})};a.a.render(Object(o.jsx)(c.a.StrictMode,{children:Object(o.jsx)(d,{})}),document.getElementById("root"))},3:function(e,t,r){}},[[10,1,2]]]);
+//# sourceMappingURL=main.3ab6e12a.chunk.js.map
