@@ -1,0 +1,14 @@
+@import 'essentials';
+
+html {
+	height: 100%;
+}
+
+#root {
+	height: 100%;
+	background: linear-gradient($primary, $primary-light);
+}
+
+.app-unauthorized {
+	padding-top: 10%;
+}

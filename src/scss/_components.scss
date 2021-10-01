@@ -1,0 +1,15 @@
+// --------------------------------------------------
+//   Sign In
+// --------------------------------------------------
+
+.signin-card {
+	max-width: 20rem;
+	border: 0;
+	.card-header {
+		background-color: $white;
+		text-align: center;
+		color: $primary;
+		font-weight: bold;
+		font-size: 2rem;
+	}
+}

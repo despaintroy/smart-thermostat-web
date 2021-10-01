@@ -16,19 +16,36 @@
 // fusv-enable
 
 // scss-docs-start color-variables
+$toquito: #fb9263;
+$carrot: #e96732;
+$mars: #d43b1b;
+$deep-sea: #083554;
+$whale: #246d94;
+$blue-trumpet: #4198b5;
+
 $white: #fff;
-$off-white-bg: #fbfffc;
-$crisp-cucumber: #40a359;
-$slate: #3a5b73;
+$off-white: #f1dfdc;
 // scss-docs-end color-variables
 
 // scss-docs-start colors-map
 // scss-docs-end colors-map
 
 // scss-docs-start theme-color-variables
-$primary: $crisp-cucumber;
-$secondary: $slate;
-$success: $primary;
+$primary-medium: $carrot;
+$primary-light: $toquito;
+
+$secondary: $whale;
+$secondary-dark: $deep-sea;
+$secondary-light: $blue-trumpet;
+
+$primary: $mars;
+$secondary: $whale;
+// $success:       $green ;
+// $info:          $cyan ;
+// $warning:       $yellow ;
+// $danger:        $red ;
+// $light:         $gray-100 ;
+// $dark:          $gray-900 ;
 // scss-docs-end theme-color-variables
 
 // scss-docs-start theme-colors-map

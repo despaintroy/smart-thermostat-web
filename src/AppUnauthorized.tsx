@@ -1,19 +1,16 @@
-import 'scss/global.scss'
+import 'scss/unauthorized.scss'
 
 import React from 'react'
 
-import Button from 'react-bootstrap/Button'
-import { signIn } from 'ts/services/auth'
+import Container from 'react-bootstrap/Container'
+import SignIn from 'ts/containers/Signin'
 
 function AppUnauthorized(): React.ReactElement {
 	return (
-		<div className='AppUnauthorized'>
-			<header className='App-header'>
-				<p>You are signed out.</p>
-				<Button variant='secondary' onClick={signIn}>
-					Sign In
-				</Button>
-			</header>
+		<div className='app-unauthorized'>
+			<Container>
+				<SignIn />
+			</Container>
 		</div>
 	)
 }

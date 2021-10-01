@@ -1,0 +1,13 @@
+.form-group {
+	margin-bottom: 0.3rem;
+}
+
+.form-label {
+	font-weight: bold;
+	font-size: 0.8rem;
+	color: $primary;
+	margin-bottom: 0.2rem;
+	span {
+		font-weight: normal;
+	}
+}
