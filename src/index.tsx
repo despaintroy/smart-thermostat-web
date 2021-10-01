@@ -4,10 +4,11 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 import App from './App'
+import AppUnauthorized from './AppUnauthorized'
 
 ReactDOM.render(
 	<React.StrictMode>
-		<App />
+		{localStorage.getItem('token') ? <App /> : <AppUnauthorized />}
 	</React.StrictMode>,
 	document.getElementById('root')
 )
