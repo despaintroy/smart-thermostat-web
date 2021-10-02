@@ -1,18 +1,26 @@
 import React, { FormEvent, useState } from 'react'
 
-import { Alert, Button, Card, Form } from 'react-bootstrap'
+import { Alert, Button, Card, Form, Spinner } from 'react-bootstrap'
 import { signIn } from 'ts/services/auth'
 
 export default function SignIn(): React.ReactElement {
 	const [email, setEmail] = useState('')
 	const [password, setPassword] = useState('')
 	const [errorText, setErrorText] = useState<string>()
+	const [isLoading, setIsLoading] = useState(false)
 
 	const submit = (e: FormEvent<HTMLFormElement>): void => {
 		e.preventDefault()
+		setErrorText('')
 
 		if (!email || !password) setErrorText('Please enter all required fields')
-		else signIn(email, password).catch(() => setErrorText('Could not sign in'))
+		else {
+			setIsLoading(true)
+			signIn(email, password).catch(() => {
+				setIsLoading(false)
+				setErrorText('Could not sign in')
+			})
+		}
 	}
 
 	return (
@@ -49,8 +57,12 @@ export default function SignIn(): React.ReactElement {
 								{errorText}
 							</Alert>
 						)}
-						<Button type='submit' className='w-100 mt-3'>
-							Sign In
+						<Button type='submit' className='w-100 mt-3' disabled={isLoading}>
+							{isLoading ? (
+								<Spinner animation='border' as='span' size='sm' />
+							) : (
+								'Sign In'
+							)}
 						</Button>
 					</Form>
 				</Card.Body>
