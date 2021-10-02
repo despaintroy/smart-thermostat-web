@@ -30,6 +30,8 @@ function Navigation(): React.ReactElement {
 						<LinkContainer to={Paths.schedule}>
 							<Nav.Link>Schedule</Nav.Link>
 						</LinkContainer>
+					</Nav>
+					<Nav>
 						<Nav.Link onClick={signOut}>Sign Out</Nav.Link>
 					</Nav>
 				</Navbar.Collapse>
