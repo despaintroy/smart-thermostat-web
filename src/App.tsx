@@ -4,7 +4,7 @@ import React from 'react'
 
 import Navigation from 'Navigation'
 import { Container } from 'react-bootstrap'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { HashRouter, Route, Switch } from 'react-router-dom'
 import Dashboard from 'ts/containers/Dashboard'
 import Schedule from 'ts/containers/Schedule'
 import Paths from 'ts/utils/paths'
@@ -12,7 +12,7 @@ import Paths from 'ts/utils/paths'
 function App(): React.ReactElement {
 	return (
 		<div className='App'>
-			<Router>
+			<HashRouter basename='/'>
 				<Navigation />
 				<Switch>
 					<Container>
@@ -20,7 +20,7 @@ function App(): React.ReactElement {
 						<Route exact path={Paths.schedule} component={Schedule} />
 					</Container>
 				</Switch>
-			</Router>
+			</HashRouter>
 		</div>
 	)
 }
