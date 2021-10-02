@@ -4,15 +4,15 @@ import { Alert, Button, Card, Form } from 'react-bootstrap'
 import { signIn } from 'ts/services/auth'
 
 export default function SignIn(): React.ReactElement {
-	const [username, setUsername] = useState('')
+	const [email, setEmail] = useState('')
 	const [password, setPassword] = useState('')
 	const [errorText, setErrorText] = useState<string>()
 
 	const submit = (e: FormEvent<HTMLFormElement>): void => {
 		e.preventDefault()
 
-		if (!username || !password) setErrorText('Please enter all required fields')
-		else signIn()
+		if (!email || !password) setErrorText('Please enter all required fields')
+		else signIn(email, password).catch(() => setErrorText('Could not sign in'))
 	}
 
 	return (
@@ -26,7 +26,7 @@ export default function SignIn(): React.ReactElement {
 							<Form.Label>Username</Form.Label>
 							<Form.Control
 								type='text'
-								onChange={(e): void => setUsername(e.target.value)}
+								onChange={(e): void => setEmail(e.target.value)}
 								isInvalid={false}
 							/>
 							<Form.Control.Feedback type='invalid'>

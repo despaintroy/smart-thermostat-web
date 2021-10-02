@@ -1,5 +1,5 @@
 const Paths = {
-	dashboard: '/',
+	dashboard: '/dashboard',
 	schedule: '/schedule',
 }
 
