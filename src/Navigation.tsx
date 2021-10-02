@@ -18,7 +18,9 @@ function Navigation(): React.ReactElement {
 			className='mb-4'
 		>
 			<Container>
-				<Navbar.Brand href={Paths.dashboard}>Smart Thermostat</Navbar.Brand>
+				<LinkContainer to={Paths.dashboard}>
+					<Navbar.Brand href={Paths.dashboard}>Smart Thermostat</Navbar.Brand>
+				</LinkContainer>
 				<Navbar.Toggle aria-controls='responsive-navbar-nav' />
 				<Navbar.Collapse id='responsive-navbar-nav'>
 					<Nav className='me-auto'>
