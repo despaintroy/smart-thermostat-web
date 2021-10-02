@@ -6,9 +6,10 @@ html {
 
 #root {
 	height: 100%;
-	background: linear-gradient($primary, $primary-light);
 }
 
 .app-unauthorized {
+	height: 100%;
 	padding-top: 10%;
+	background: linear-gradient($primary, $primary-light);
 }
