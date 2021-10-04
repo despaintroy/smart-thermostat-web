@@ -1,6 +1,6 @@
 import 'scss/global.scss'
 
-import React, { Context } from 'react'
+import React from 'react'
 import ReactDOM from 'react-dom'
 
 import { auth } from 'ts/services/firebase'
@@ -10,18 +10,13 @@ import { formatUser } from 'ts/services/user'
 import App from './App'
 import AppUnauthorized from './AppUnauthorized'
 
-export let UserContext: Context<User>
-
 auth.onAuthStateChanged(fireUser => {
 	const user = formatUser(fireUser) as User
-	UserContext = React.createContext(user)
 
 	if (user) {
 		ReactDOM.render(
 			<React.StrictMode>
-				<UserContext.Provider value={user}>
-					<App />
-				</UserContext.Provider>
+				<App user={user} />
 			</React.StrictMode>,
 			document.getElementById('root')
 		)
