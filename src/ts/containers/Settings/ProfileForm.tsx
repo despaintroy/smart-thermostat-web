@@ -1,17 +1,9 @@
-import React, {
-	FormEvent,
-	useContext,
-	useRef,
-	useState,
-} from 'react'
+import React, { FormEvent, useContext, useRef, useState } from 'react'
 
 import { UserContext } from 'index'
 import { Form } from 'react-bootstrap'
 import LoadingButton from 'ts/components/LoadingButton'
-import {
-	updateEmail,
-	updateName,
-} from 'ts/services/user'
+import { updateEmail, updateName } from 'ts/services/user'
 
 function ProfileForm(): React.ReactElement {
 	const [user, setUser] = useState(useContext(UserContext))

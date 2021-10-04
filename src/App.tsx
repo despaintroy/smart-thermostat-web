@@ -22,7 +22,9 @@ function App(): React.ReactElement {
 						<Route exact path={Paths.settings} component={Settings} />
 
 						{/* Default redirect */}
-						<Redirect push to={Paths.dashboard} />
+						<Route exact path='/'>
+							<Redirect to={Paths.dashboard} />
+						</Route>
 					</Container>
 				</Switch>
 			</HashRouter>
