@@ -9,7 +9,15 @@ function Settings(): React.ReactElement {
 	const [user, setUser] = useState(useContext(UserContext))
 	const nameField = useRef<HTMLInputElement>(null)
 	const emailField = useRef<HTMLInputElement>(null)
+
 	const [updateLock, setUpdateLock] = useState<number>(0)
+	const [hasChanged, setHasChanged] = useState(false)
+
+	const changed = (): void =>
+		setHasChanged(
+			nameField.current?.value !== user.name ||
+				emailField.current?.value !== user.email
+		)
 
 	const submit = (e: FormEvent<HTMLFormElement>): void => {
 		e.preventDefault()
@@ -55,6 +63,7 @@ function Settings(): React.ReactElement {
 						ref={nameField}
 						type='text'
 						defaultValue={user.name || ''}
+						onChange={changed}
 					/>
 				</Form.Group>
 				<Form.Group>
@@ -63,6 +72,7 @@ function Settings(): React.ReactElement {
 						ref={emailField}
 						type='email'
 						defaultValue={user.email || ''}
+						onChange={changed}
 					/>
 					<Form.Text>This email used for account sign in</Form.Text>
 				</Form.Group>
@@ -70,6 +80,7 @@ function Settings(): React.ReactElement {
 					className='mt-3 w-100'
 					buttonText='Save Changes'
 					showLoading={updateLock > 0}
+					disabled={!hasChanged}
 					type='submit'
 				/>
 			</Form>

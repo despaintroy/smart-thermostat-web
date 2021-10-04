@@ -12,7 +12,7 @@ function Navigation(): React.ReactElement {
 	return (
 		<Navbar
 			collapseOnSelect
-			expand='sm'
+			expand='md'
 			bg='primary'
 			variant='dark'
 			className='mb-4'
