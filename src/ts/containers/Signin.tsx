@@ -1,6 +1,7 @@
 import React, { FormEvent, useState } from 'react'
 
-import { Alert, Button, Card, Form, Spinner } from 'react-bootstrap'
+import { Alert, Card, Form } from 'react-bootstrap'
+import LoadingButton from 'ts/components/LoadingButton'
 import { signIn } from 'ts/services/auth'
 
 export default function SignIn(): React.ReactElement {
@@ -57,13 +58,12 @@ export default function SignIn(): React.ReactElement {
 								{errorText}
 							</Alert>
 						)}
-						<Button type='submit' className='w-100 mt-3' disabled={isLoading}>
-							{isLoading ? (
-								<Spinner animation='border' as='span' size='sm' />
-							) : (
-								'Sign In'
-							)}
-						</Button>
+						<LoadingButton
+							type='submit'
+							className='mt-3 w-100'
+							buttonText='Sign In'
+							showLoading={isLoading}
+						/>
 					</Form>
 				</Card.Body>
 			</Card>
