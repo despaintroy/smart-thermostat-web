@@ -5,7 +5,6 @@ import React from 'react'
 import { Container, Nav } from 'react-bootstrap'
 import Navbar from 'react-bootstrap/Navbar'
 import { LinkContainer } from 'react-router-bootstrap'
-import { signOut } from 'ts/services/auth'
 import Paths from 'ts/utils/paths'
 
 function Navigation(): React.ReactElement {
@@ -33,9 +32,6 @@ function Navigation(): React.ReactElement {
 						<LinkContainer to={Paths.settings}>
 							<Nav.Link>Settings</Nav.Link>
 						</LinkContainer>
-					</Nav>
-					<Nav>
-						<Nav.Link onClick={signOut}>Sign Out</Nav.Link>
 					</Nav>
 				</Navbar.Collapse>
 			</Container>
