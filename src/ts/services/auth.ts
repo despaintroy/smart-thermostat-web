@@ -2,10 +2,10 @@ import { signInWithEmailAndPassword } from 'firebase/auth'
 
 import { auth } from './firebase'
 
-export const signIn = (email: string, password: string): Promise<boolean> => {
+export const signIn = (email: string, password: string): Promise<void> => {
 	return signInWithEmailAndPassword(auth, email, password)
 		.then(() => {
-			return Promise.resolve(true)
+			return Promise.resolve()
 		})
 		.catch(error => {
 			console.log('Error Signing In')

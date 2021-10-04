@@ -23,16 +23,21 @@ function Navigation(): React.ReactElement {
 				</LinkContainer>
 				<Navbar.Toggle aria-controls='responsive-navbar-nav' />
 				<Navbar.Collapse id='responsive-navbar-nav'>
-					<Nav className='me-auto'>
-						<LinkContainer to={Paths.dashboard}>
-							<Nav.Link>Dashboard</Nav.Link>
-						</LinkContainer>
-						<LinkContainer to={Paths.schedule}>
-							<Nav.Link>Schedule</Nav.Link>
-						</LinkContainer>
-					</Nav>
-					<Nav>
-						<Nav.Link onClick={signOut}>Sign Out</Nav.Link>
+					<Nav className='justify-content-between w-100'>
+						<div className='d-flex'>
+							<LinkContainer to={Paths.dashboard}>
+								<Nav.Link>Dashboard</Nav.Link>
+							</LinkContainer>
+							<LinkContainer to={Paths.schedule}>
+								<Nav.Link>Schedule</Nav.Link>
+							</LinkContainer>
+						</div>
+						<div className='d-flex'>
+							<LinkContainer to={Paths.settings}>
+								<Nav.Link>Settings</Nav.Link>
+							</LinkContainer>
+							<Nav.Link onClick={signOut}>Sign Out</Nav.Link>
+						</div>
 					</Nav>
 				</Navbar.Collapse>
 			</Container>
