@@ -36,6 +36,9 @@ function App(props: { user: User }): React.ReactElement {
 							<Route exact path={Paths.settings} component={Settings} />
 
 							{/* Default redirect */}
+							<Route exact path={Paths.signIn}>
+								<Redirect to={Paths.dashboard} />
+							</Route>
 							<Route exact path='/'>
 								<Redirect to={Paths.dashboard} />
 							</Route>
