@@ -30,7 +30,7 @@ function App(props: { user: User }): React.ReactElement {
 				<HashRouter basename='/'>
 					<Navigation />
 					<Switch>
-						<Container>
+						<Container className='pb-5'>
 							<Route exact path={Paths.dashboard} component={Dashboard} />
 							<Route exact path={Paths.schedule} component={Schedule} />
 							<Route exact path={Paths.settings} component={Settings} />

@@ -31,5 +31,7 @@ export const ErrorMessages: ModelErrorCodes = {
 		// 'auth/weak-password': 'This password is too weak',
 		'auth/invalid-password': 'This password is invalid.',
 		'auth/invalid-email': 'Email address is invalid',
+		'auth/user-not-found': 'Account does not exist for this email address',
+		'auth/wrong-password': 'Incorrect password',
 	},
 }
