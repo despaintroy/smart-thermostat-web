@@ -78,7 +78,7 @@ function ProfileForm(): React.ReactElement {
 				className='mt-3 w-100'
 				buttonText='Save Changes'
 				showLoading={isUpdating}
-				disabled={!hasChanged}
+				hidden={!hasChanged}
 				type='submit'
 			/>
 		</Form>

@@ -7,3 +7,11 @@ body {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
+
+.content-card {
+	box-shadow: 0 0 1rem rgba($black, 0.1);
+	.card-header {
+		font-weight: bold;
+		font-size: 1.3rem;
+	}
+}

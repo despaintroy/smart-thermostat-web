@@ -1,5 +1,6 @@
 import {
 	updateEmail as updateFireEmail,
+	updatePassword as updateFirePassword,
 	updateProfile,
 	User as FireUser,
 } from '@firebase/auth'
@@ -36,5 +37,10 @@ export const updateName = (name: string): Promise<void> => {
 
 export const updateEmail = (email: string): Promise<void> => {
 	if (auth.currentUser) return updateFireEmail(auth.currentUser, email)
+	return Promise.reject()
+}
+
+export const updatePassword = (password: string): Promise<void> => {
+	if (auth.currentUser) return updateFirePassword(auth.currentUser, password)
 	return Promise.reject()
 }
