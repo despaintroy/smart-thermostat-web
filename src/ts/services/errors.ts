@@ -7,31 +7,23 @@ export enum ModelName {
 
 export type FirebaseError = Record<string, string>
 
-export interface ModelErrorCodes {
-	model: ModelName
-	errors: FirebaseError
-}
-
 export const requiresReAuth = (e: AuthError): boolean =>
 	e.code === AuthErrorCodes.CREDENTIAL_TOO_OLD_LOGIN_AGAIN
 
 export const getMessage = (e: AuthError): string => {
-	const message = ErrorMessages.errors[e.code]
+	const message = ErrorMessages[e.code]
 	return (
 		message ?? e.message.replace('Firebase: ', '').replace(` (${e.code})`, '')
 	)
 }
 
-export const ErrorMessages: ModelErrorCodes = {
-	model: ModelName.auth,
-	errors: {
-		'auth/email-already-exists': 'An account already exists with this email.',
-		'auth/requires-recent-login':
-			'Please sign out then sign back in to perform this action',
-		// 'auth/weak-password': 'This password is too weak',
-		'auth/invalid-password': 'This password is invalid.',
-		'auth/invalid-email': 'Email address is invalid',
-		'auth/user-not-found': 'Account does not exist for this email address',
-		'auth/wrong-password': 'Incorrect password',
-	},
+export const ErrorMessages: FirebaseError = {
+	'auth/email-already-exists': 'An account already exists with this email.',
+	'auth/requires-recent-login':
+		'Please sign out then sign back in to perform this action',
+	// 'auth/weak-password': 'This password is too weak',
+	'auth/invalid-password': 'This password is invalid.',
+	'auth/invalid-email': 'Email address is invalid',
+	'auth/user-not-found': 'Account does not exist for this email address',
+	'auth/wrong-password': 'Incorrect password',
 }
