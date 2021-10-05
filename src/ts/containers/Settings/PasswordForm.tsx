@@ -2,6 +2,7 @@ import React, { FormEvent, useRef, useState } from 'react'
 
 import { Alert, Form } from 'react-bootstrap'
 import LoadingButton from 'ts/components/LoadingButton'
+import { getMessage, requiresReAuth } from 'ts/services/errors'
 import { updatePassword } from 'ts/services/user'
 
 function PasswordForm(): React.ReactElement {
@@ -9,11 +10,14 @@ function PasswordForm(): React.ReactElement {
 	const p2Field = useRef<HTMLInputElement>(null)
 
 	const [isUpdating, setIsUpdating] = useState(false)
-	const [hasChanged, setHasChanged] = useState(false)
+	const [readySubmit, setReadySubmit] = useState(false)
 	const [errorText, setErrorText] = useState<string>()
 
-	const changed = (): void =>
-		setHasChanged(!!p1Field.current?.value && !!p2Field.current?.value)
+	const changed = (): void => {
+		const ready = !!p1Field.current?.value && !!p2Field.current?.value
+		!ready && setErrorText('')
+		setReadySubmit(ready)
+	}
 
 	const submit = (e: FormEvent<HTMLFormElement>): void => {
 		e.preventDefault()
@@ -26,7 +30,10 @@ function PasswordForm(): React.ReactElement {
 		if (p1 && p1 === p2) {
 			updatePassword(p1)
 				.then(() => (e.target as HTMLFormElement).reset())
-				.catch(e => setErrorText(e.message))
+				.catch(e => {
+					if (requiresReAuth(e)) console.log('SIGN IN AGAIN')
+					setErrorText(getMessage(e))
+				})
 				.finally(() => setIsUpdating(false))
 		} else {
 			setErrorText('Passwords do not match')
@@ -63,7 +70,7 @@ function PasswordForm(): React.ReactElement {
 				className='mt-3 w-100'
 				buttonText='Change Password'
 				showLoading={isUpdating}
-				hidden={!hasChanged}
+				hidden={!readySubmit}
 				type='submit'
 			/>
 		</Form>
