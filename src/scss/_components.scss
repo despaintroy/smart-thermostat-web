@@ -1,4 +1,74 @@
 // --------------------------------------------------
+//   Dial
+// --------------------------------------------------
+
+.dial {
+	position: relative;
+	box-shadow: 0 0 0.75rem rgba($black, 0.2);
+	border-radius: 50%;
+	// display: flex;
+	// justify-content: center;
+	// align-items: center;
+	.dial-stack {
+		padding: 10px 0;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		.adjust-button {
+			font-size: 2rem;
+			color: $secondary;
+			// &.up {}
+			// &.down {}
+		}
+		.set-temp {
+			font-size: 5rem;
+			line-height: 1;
+			padding-left: 1rem;
+			padding-bottom: 1rem;
+			color: $primary;
+		}
+	}
+}
+
+// Styles for a 100% width responsive circle borrowed from Chris Bracco on Codepen
+// https://codepen.io/cbracco/pen/qnduh
+.dial-circle {
+	position: relative;
+	display: block;
+	margin: 2em 0;
+	background-color: transparent;
+	text-align: center;
+	&:after {
+		background-color: $white;
+		display: block;
+		padding-bottom: 100%;
+		width: 100%;
+		height: 0;
+		border-radius: 50%;
+		content: '';
+	}
+	.circle__inner {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		.circle__wrapper {
+			display: table;
+			width: 100%;
+			height: 100%;
+			.circle__content {
+				display: table-cell;
+				padding: 1em;
+				vertical-align: middle;
+			}
+		}
+	}
+}
+
+// --------------------------------------------------
 //   Sign In
 // --------------------------------------------------
 
