@@ -6,9 +6,6 @@
 	position: relative;
 	box-shadow: 0 0 0.75rem rgba($black, 0.2);
 	border-radius: 50%;
-	// display: flex;
-	// justify-content: center;
-	// align-items: center;
 	.dial-stack {
 		padding: 10px 0;
 		height: 100%;
@@ -25,7 +22,6 @@
 			font-size: 5rem;
 			line-height: 1;
 			padding-left: 1rem;
-			padding-bottom: 1rem;
 			color: $primary;
 		}
 	}

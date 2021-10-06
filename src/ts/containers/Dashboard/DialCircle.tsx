@@ -1,7 +1,7 @@
 import React from 'react'
 
 function DialCircle(props: { children: React.ReactNode }): React.ReactElement {
-	const { children, ...rest } = props
+	const { children } = props
 	return (
 		<div className='dial dial-circle'>
 			<div className='circle__inner'>
