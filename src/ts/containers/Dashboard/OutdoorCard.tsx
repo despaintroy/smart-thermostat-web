@@ -1,25 +1,50 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 import { Card, CardProps, Col, Row } from 'react-bootstrap'
+import { Weather } from 'ts/services/models'
+import { getWeather } from 'ts/services/weather'
+import { NumericalStyle } from 'ts/utils/constants'
+import { formatNumber, formatTemperature } from 'ts/utils/helpers'
 
 type OutdoorCardProps = CardProps
 
 function OutdoorCard(props: OutdoorCardProps): React.ReactElement {
 	const { className: classes, ...others } = props
-	const temp = 43
-	const humidity = 60
+	const [weather, setWeather] = useState<Weather>()
+
+	const updateWeather = (): void => {
+		getWeather()
+			.then(r => setWeather(r))
+			.catch(() => console.error('Error updating weather'))
+	}
+
+	useEffect(() => updateWeather(), [])
 
 	return (
 		<Card className={`content-card ${classes}`} {...others}>
 			<Card.Header>Outdoor</Card.Header>
 			<Card.Body>
 				<Row>
+					<Col>Feels Like:</Col>
+					<Col className='bold'>
+						{weather?.feelsLike ? formatTemperature(weather.feelsLike) : '–'}
+					</Col>
+				</Row>
+				<Row>
 					<Col>Temperature:</Col>
-					<Col className='bold'>{temp}º</Col>
+					<Col className='bold'>
+						{weather?.temperature
+							? formatTemperature(weather.temperature)
+							: '–'}
+					</Col>
 				</Row>
 				<Row>
 					<Col>Humidity:</Col>
-					<Col className='bold'>{humidity}%</Col>
+					<Col className='bold'>
+						{weather?.humidity
+							? formatNumber(weather.humidity / 100, NumericalStyle.percent, 0)
+							: '–'}
+					</Col>
 				</Row>
 			</Card.Body>
 		</Card>

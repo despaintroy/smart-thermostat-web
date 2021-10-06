@@ -4,3 +4,9 @@ export interface User {
 	email: string | null | undefined
 	phone: string | null | undefined
 }
+
+export interface Weather {
+	feelsLike: number
+	temperature: number
+	humidity: number
+}
