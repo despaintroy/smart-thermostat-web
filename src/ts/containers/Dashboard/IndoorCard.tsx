@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Card, CardProps } from 'react-bootstrap'
+import { Card, CardProps, Col, Row } from 'react-bootstrap'
 
 type IndoorCardProps = CardProps
 
@@ -13,9 +13,14 @@ function IndoorCard(props: IndoorCardProps): React.ReactElement {
 		<Card className={`content-card ${classes}`} {...others}>
 			<Card.Header>Indoor</Card.Header>
 			<Card.Body>
-				Temperature: <b>{temp}º</b>
-				<br />
-				Humidity: <b>{humidity}%</b>
+				<Row>
+					<Col>Temperature:</Col>
+					<Col className='bold'>{temp}º</Col>
+				</Row>
+				<Row>
+					<Col>Humidity:</Col>
+					<Col className='bold'>{humidity}%</Col>
+				</Row>
 			</Card.Body>
 		</Card>
 	)
