@@ -5,12 +5,12 @@ import { Card, CardProps } from 'react-bootstrap'
 type IndoorCardProps = CardProps
 
 function IndoorCard(props: IndoorCardProps): React.ReactElement {
-	const { ...others } = props
+	const { className: classes, ...others } = props
 	const temp = 71
 	const humidity = 40
 
 	return (
-		<Card className='content-card' {...others}>
+		<Card className={`content-card ${classes}`} {...others}>
 			<Card.Header>Indoor</Card.Header>
 			<Card.Body>
 				Temperature: <b>{temp}º</b>
