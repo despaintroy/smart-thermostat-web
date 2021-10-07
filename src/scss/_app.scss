@@ -8,10 +8,19 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 }
 
+.app {
+	padding-top: 4rem;
+}
+
 .content-card {
 	box-shadow: 0 0 0.75rem rgba($black, 0.2);
 	.card-header {
 		font-weight: bold;
 		font-size: 1.3rem;
 	}
+}
+
+.dashboard-cards-container {
+	max-width: 30rem;
+	margin: auto;
 }

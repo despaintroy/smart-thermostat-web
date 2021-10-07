@@ -26,7 +26,7 @@ function App(props: { user: User }): React.ReactElement {
 
 	return (
 		<UserContext.Provider value={{ user, updateUser }}>
-			<div className='App'>
+			<div className='app'>
 				<HashRouter basename='/'>
 					<Navigation />
 					<Switch>

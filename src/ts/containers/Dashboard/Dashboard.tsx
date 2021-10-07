@@ -8,8 +8,10 @@ function Dashboard(): React.ReactElement {
 	return (
 		<>
 			<Dial />
-			<IndoorCard className='mt-3' />
-			<OutdoorCard className='mt-3' />
+			<div className='dashboard-cards-container'>
+				<IndoorCard className='mt-3' />
+				<OutdoorCard className='mt-3' />
+			</div>
 		</>
 	)
 }

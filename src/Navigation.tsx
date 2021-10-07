@@ -15,6 +15,7 @@ function Navigation(): React.ReactElement {
 			bg='primary'
 			variant='dark'
 			className='mb-4'
+			fixed='top'
 		>
 			<Container>
 				<LinkContainer to={Paths.dashboard}>
