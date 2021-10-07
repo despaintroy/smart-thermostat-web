@@ -1,5 +1,6 @@
 import { initializeApp } from 'firebase/app'
 import { getAuth } from 'firebase/auth'
+import { getDatabase } from 'firebase/database'
 
 // These keys will be exposed on the client frontend, but this is safe
 // Security is enforced through Firebase security rules
@@ -16,3 +17,4 @@ const firebaseConfig = {
 // Initialize Firebase
 const firebaseApp = initializeApp(firebaseConfig)
 export const auth = getAuth(firebaseApp)
+export const database = getDatabase(firebaseApp)

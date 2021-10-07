@@ -1,3 +1,9 @@
+export interface SetState {
+	setTemp: number
+	useSchedule: boolean
+	timeStamp: number
+}
+
 export interface User {
 	readonly id: string
 	name: string | null | undefined
