@@ -6,6 +6,8 @@
 	position: relative;
 	box-shadow: 0 0 0.75rem rgba($black, 0.2);
 	border-radius: 50%;
+	max-width: 25rem;
+	margin: 2rem auto;
 	.dial-stack {
 		padding: 10px 0;
 		height: 100%;
@@ -32,7 +34,6 @@
 .dial-circle {
 	position: relative;
 	display: block;
-	margin: 2em 0;
 	background-color: transparent;
 	text-align: center;
 	&:after {
