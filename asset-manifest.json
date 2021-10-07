@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/smart-thermostat-web/static/css/main.ab1602dc.chunk.css",
-    "main.js": "/smart-thermostat-web/static/js/main.642b5900.chunk.js",
-    "main.js.map": "/smart-thermostat-web/static/js/main.642b5900.chunk.js.map",
+    "main.css": "/smart-thermostat-web/static/css/main.b97daf17.chunk.css",
+    "main.js": "/smart-thermostat-web/static/js/main.2a23ffed.chunk.js",
+    "main.js.map": "/smart-thermostat-web/static/js/main.2a23ffed.chunk.js.map",
     "runtime-main.js": "/smart-thermostat-web/static/js/runtime-main.3eaf3db8.js",
     "runtime-main.js.map": "/smart-thermostat-web/static/js/runtime-main.3eaf3db8.js.map",
     "static/js/2.7674767f.chunk.js": "/smart-thermostat-web/static/js/2.7674767f.chunk.js",
     "static/js/2.7674767f.chunk.js.map": "/smart-thermostat-web/static/js/2.7674767f.chunk.js.map",
     "index.html": "/smart-thermostat-web/index.html",
-    "static/css/main.ab1602dc.chunk.css.map": "/smart-thermostat-web/static/css/main.ab1602dc.chunk.css.map",
+    "static/css/main.b97daf17.chunk.css.map": "/smart-thermostat-web/static/css/main.b97daf17.chunk.css.map",
     "static/js/2.7674767f.chunk.js.LICENSE.txt": "/smart-thermostat-web/static/js/2.7674767f.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.3eaf3db8.js",
     "static/js/2.7674767f.chunk.js",
-    "static/css/main.ab1602dc.chunk.css",
-    "static/js/main.642b5900.chunk.js"
+    "static/css/main.b97daf17.chunk.css",
+    "static/js/main.2a23ffed.chunk.js"
   ]
 }
