@@ -4,7 +4,11 @@ import { Card, CardProps, Col, Row } from 'react-bootstrap'
 import { Weather } from 'ts/services/models'
 import { getWeather } from 'ts/services/weather'
 import { NumericalStyle } from 'ts/utils/constants'
-import { formatNumber, formatTemperature } from 'ts/utils/helpers'
+import {
+	elapsedTimeString,
+	formatNumber,
+	formatTemperature,
+} from 'ts/utils/helpers'
 
 type OutdoorCardProps = CardProps
 
@@ -46,6 +50,11 @@ function OutdoorCard(props: OutdoorCardProps): React.ReactElement {
 							: '–'}
 					</Col>
 				</Row>
+				{weather?.timeStamp && (
+					<p className='text-muted mt-3 mb-0'>
+						Last updated: {elapsedTimeString(weather.timeStamp)}
+					</p>
+				)}
 			</Card.Body>
 		</Card>
 	)

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 
 import { Card, CardProps, Col, Row } from 'react-bootstrap'
 import { IndoorMeasurements } from 'ts/services/models'
+import { elapsedTimeString } from 'ts/utils/helpers'
 
 type IndoorCardProps = CardProps
 
@@ -25,6 +26,11 @@ function IndoorCard(props: IndoorCardProps): React.ReactElement {
 						{measurements?.humidity ? `${measurements.humidity}%` : '–'}
 					</Col>
 				</Row>
+				{measurements?.timeStamp && (
+					<p className='text-muted mt-3 mb-0'>
+						Last updated: {elapsedTimeString(measurements.timeStamp)}
+					</p>
+				)}
 			</Card.Body>
 		</Card>
 	)

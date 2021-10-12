@@ -1,5 +1,7 @@
+export type TimeStamp = number
+
 export interface IndoorMeasurements {
-	timeStamp: number
+	timeStamp: TimeStamp
 	temperature: number
 	humidity: number
 }
@@ -13,7 +15,7 @@ export interface SchedulePoint {
 export interface SetState {
 	setTemp: number
 	useSchedule: boolean
-	timeStamp: number
+	timeStamp: TimeStamp
 }
 
 export interface User {
@@ -27,4 +29,5 @@ export interface Weather {
 	feelsLike: number
 	temperature: number
 	humidity: number
+	timeStamp: TimeStamp
 }
