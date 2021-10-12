@@ -1,13 +1,16 @@
-import { signInWithEmailAndPassword } from 'firebase/auth'
+import {
+	getAuth,
+	signInWithEmailAndPassword,
+	signOut as fireSignOut,
+} from 'firebase/auth'
 
-import { auth } from './firebase'
+import { firebaseApp } from './firebase'
 
-export const signIn = (email: string, password: string): Promise<void> => {
-	return signInWithEmailAndPassword(auth, email, password).then(() =>
+export const auth = getAuth(firebaseApp)
+
+export const signIn = (email: string, password: string): Promise<void> =>
+	signInWithEmailAndPassword(auth, email, password).then(() =>
 		Promise.resolve()
 	)
-}
 
-export const signOut = (): void => {
-	auth.signOut()
-}
+export const signOut = (): Promise<void> => fireSignOut(auth)

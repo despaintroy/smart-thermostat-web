@@ -1,4 +1,5 @@
 import { TimeStamp } from 'ts/services/models'
+
 import { NumericalStyle } from './constants'
 
 export const formatNumber = (
@@ -22,6 +23,6 @@ export const formatTemperature = (
 	return `${formatNumber(temperature, NumericalStyle.decimal, decimals)}º`
 }
 
-export const elapsedTimeString = (timeStamp: TimeStamp) => {
+export const elapsedTimeString = (timeStamp: TimeStamp): string => {
 	return `${new Date().getTime() - timeStamp} milliseconds ago`
 }

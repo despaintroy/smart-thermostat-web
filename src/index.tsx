@@ -3,7 +3,7 @@ import 'scss/global.scss'
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import { auth } from 'ts/services/firebase'
+import { auth } from 'ts/services/auth'
 import { User } from 'ts/services/models'
 import { formatUser } from 'ts/services/user'
 

@@ -3,9 +3,9 @@ import {
 	updatePassword as updateFirePassword,
 	updateProfile,
 	User as FireUser,
-} from '@firebase/auth'
+} from 'firebase/auth'
 
-import { auth } from './firebase'
+import { auth } from './auth'
 import { User } from './models'
 
 export const formatUser = (user: FireUser | null): User | null => {
