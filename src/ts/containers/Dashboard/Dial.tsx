@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-import { SetState } from 'ts/services/models'
+import { SchedulePoint, SetState } from 'ts/services/models'
 import { getState, setStateDbRef, writeState } from 'ts/services/setState'
 
 import { onValue } from '@firebase/database'
@@ -9,7 +9,7 @@ import DialCircle from './DialCircle'
 
 function Dial(): React.ReactElement {
 	const [setState, setSetState] = useState<SetState>()
-	const nextChange = { temp: 65, time: '6:00pm' }
+	const [nextChange, setNextChange] = useState<SchedulePoint>()
 
 	useEffect(() => {
 		getState()
@@ -45,8 +45,14 @@ function Dial(): React.ReactElement {
 					<div className='text-secondary'>SET TO</div>
 					<div className='set-temp'>{setState.setTemp}º</div>
 					<div className='text-muted mt-3'>
-						Scheduled change to {nextChange.temp}º<br />
-						at {nextChange.time}
+						{(nextChange && (
+							<span>
+								Scheduled change to {nextChange.temperature}
+								<br />
+								at {nextChange.time}
+							</span>
+						)) ||
+							'–'}
 					</div>
 				</div>
 				<div

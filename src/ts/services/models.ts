@@ -1,3 +1,15 @@
+export interface IndoorMeasurements {
+	timeStamp: number
+	temperature: number
+	humidity: number
+}
+
+export interface SchedulePoint {
+	day: number
+	time: number
+	temperature: number
+}
+
 export interface SetState {
 	setTemp: number
 	useSchedule: boolean
