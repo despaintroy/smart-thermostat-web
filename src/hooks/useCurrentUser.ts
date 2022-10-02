@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { auth } from 'services/authentication'
 import { User } from 'services/models'
 import { formatUser } from 'services/user'
@@ -6,7 +6,12 @@ import { formatUser } from 'services/user'
 const useCurrentUser = () => {
 	const [user, setUser] = useState<User | null>(null)
 
-	auth.onAuthStateChanged(fireUser => setUser(formatUser(fireUser)))
+	useEffect(() => {
+		const unsubscribe = auth.onAuthStateChanged(fireUser =>
+			setUser(formatUser(fireUser))
+		)
+		return unsubscribe
+	}, [])
 
 	return user
 }
