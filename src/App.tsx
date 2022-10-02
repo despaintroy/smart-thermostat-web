@@ -30,6 +30,10 @@ const authRouter = createBrowserRouter([
 				path: 'dashboard/',
 				element: <Dashboard />,
 			},
+			{
+				path: 'account/',
+				element: <p>Account</p>,
+			},
 		],
 	},
 ])
