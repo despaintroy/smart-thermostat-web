@@ -1,9 +1,11 @@
 import { CssVarsProvider } from '@mui/joy/styles'
+import useCurrentUser from 'hooks/useCurrentUser'
 import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom'
 import theme from 'theme'
 import Login from 'views/Login'
 
-const router = createBrowserRouter([
+// Unauthenticated routes
+const unauthRouter = createBrowserRouter([
 	{
 		path: '/',
 		element: <Login />,
@@ -11,13 +13,24 @@ const router = createBrowserRouter([
 	},
 ])
 
+// Authenticated routes
+const authRouter = createBrowserRouter([
+	{
+		path: '/',
+		element: <p>Home</p>,
+		errorElement: <Navigate to='/' replace />,
+	},
+])
+
 function App() {
+	const user = useCurrentUser()
+
 	return (
 		<CssVarsProvider
 			// disableTransitionOnChange
 			theme={theme}
 		>
-			<RouterProvider router={router} />
+			<RouterProvider router={user ? authRouter : unauthRouter} />
 		</CssVarsProvider>
 	)
 }
