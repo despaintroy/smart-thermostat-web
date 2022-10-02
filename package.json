@@ -1,25 +1,16 @@
 {
-  "homepage": "http://despaintroy.github.io/smart-thermostat-web",
-  "name": "smart-thermostat-web",
+  "name": "maintenance-tracker",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^5.14.1",
-    "@testing-library/react": "^11.2.7",
-    "@testing-library/user-event": "^12.8.3",
-    "bootstrap": "^5.0.1",
-    "firebase": "^9.1.1",
-    "node-sass": "^6.0.0",
-    "openweathermap-ts": "^1.2.10",
-    "prettier": "^2.3.1",
-    "react": "^17.0.2",
-    "react-bootstrap": "^1.6.1",
-    "react-dom": "^17.0.2",
-    "react-router-bootstrap": "^0.25.0",
-    "react-router-dom": "^5.2.0",
-    "react-scripts": "4.0.3",
-    "typescript": "^4.4.3",
-    "web-vitals": "^1.1.2"
+    "@emotion/react": "^11.10.4",
+    "@emotion/styled": "^11.10.4",
+    "@mui/icons-material": "^5.10.6",
+    "@mui/joy": "^5.0.0-alpha.47",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",
+    "typescript": "^4.8.4"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -27,10 +18,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint --ext js,ts,jsx,tsx src",
-    "style": "prettier --write 'src/**'",
-    "workup": "npm run style && eslint --fix --ext js,ts,jsx,tsx src",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "lint:fix": "eslint --ext js,ts,jsx,tsx src --fix",
+    "format": "prettier --write 'src/**'"
   },
   "eslintConfig": {
     "extends": [
@@ -51,14 +40,10 @@
     ]
   },
   "devDependencies": {
-    "@types/bootstrap": "^5.0.16",
-    "@types/jest": "^26.0.24",
-    "@types/node": "^12.20.27",
-    "@types/react": "^17.0.26",
-    "@types/react-bootstrap": "^0.32.25",
-    "@types/react-dom": "^17.0.9",
-    "@types/react-router-bootstrap": "^0.24.5",
-    "@types/react-router-dom": "^5.1.7",
-    "gh-pages": "^3.2.3"
+    "@types/node": "^16.11.56",
+    "@types/react": "^18.0.21",
+    "@types/react-dom": "^18.0.6",
+    "prettier": "^2.7.1",
+    "prettier-plugin-organize-imports": "^3.1.1"
   }
 }

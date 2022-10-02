@@ -1,53 +1,119 @@
-import 'scss/global.scss'
+import {
+  Box,
+  Button,
+  Link,
+  Sheet,
+  Stack,
+  TextField,
+  Typography,
+  useColorScheme,
+} from "@mui/joy";
+import { CssVarsProvider } from "@mui/joy/styles";
+import LoadingButton from "components/inputs/LoadingButton";
+import { FC, useState } from "react";
+import theme from "theme";
 
-import React, { Context, useState } from 'react'
+const ColorModeToggle: FC = () => {
+  const { mode, setMode } = useColorScheme();
 
-import Navigation from 'Navigation'
-import { Container } from 'react-bootstrap'
-import { HashRouter, Redirect, Route, Switch } from 'react-router-dom'
-import Dashboard from 'ts/containers/Dashboard'
-import Schedule from 'ts/containers/Schedule'
-import Settings from 'ts/containers/Settings/Settings'
-import { User } from 'ts/services/models'
-import { getUser } from 'ts/services/user'
-import Paths from 'ts/utils/paths'
+  return (
+    <Button
+      variant="outlined"
+      onClick={() => {
+        if (mode === "light") {
+          setMode("dark");
+        } else {
+          setMode("light");
+        }
+      }}
+    >
+      {mode === "light" ? "Turn dark" : "Turn light"}
+    </Button>
+  );
+};
 
-export let UserContext: Context<{ user: User; updateUser: () => void }>
+function App() {
+  const [loading, setLoading] = useState(false);
 
-function App(props: { user: User }): React.ReactElement {
-	const [user, setUser] = useState(props.user)
+  const handleLogin = () => {
+    setLoading(true);
+  };
 
-	const updateUser = (): void => {
-		const newUser = getUser()
-		newUser && setUser(newUser)
-	}
-
-	UserContext = React.createContext({ user, updateUser })
-
-	return (
-		<UserContext.Provider value={{ user, updateUser }}>
-			<div className='app'>
-				<HashRouter basename='/'>
-					<Navigation />
-					<Switch>
-						<Container className='pb-5'>
-							<Route exact path={Paths.dashboard} component={Dashboard} />
-							<Route exact path={Paths.schedule} component={Schedule} />
-							<Route exact path={Paths.settings} component={Settings} />
-
-							{/* Default redirect */}
-							<Route exact path={Paths.signIn}>
-								<Redirect to={Paths.dashboard} />
-							</Route>
-							<Route exact path='/'>
-								<Redirect to={Paths.dashboard} />
-							</Route>
-						</Container>
-					</Switch>
-				</HashRouter>
-			</div>
-		</UserContext.Provider>
-	)
+  return (
+    <CssVarsProvider
+      // disableTransitionOnChange
+      theme={theme}
+    >
+      <Box sx={{ bgcolor: "background.body", minHeight: "100vh" }}>
+        <ColorModeToggle />
+        <Sheet
+          sx={{
+            maxWidth: 400,
+            mx: "auto",
+            my: 4,
+            py: 2,
+            px: 2,
+            display: "flex",
+            flexDirection: "column",
+            gap: 2,
+            borderRadius: "sm",
+            boxShadow: "md",
+            bgcolor: "background.level1",
+          }}
+        >
+          <div>
+            <Typography
+              level="h3"
+              component="h1"
+              fontWeight="bold"
+              textAlign="center"
+            >
+              Smart Thermostat
+            </Typography>
+            <Typography
+              level="body2"
+              textAlign="center"
+              textColor="neutral.500"
+            >
+              Sign in to continue
+            </Typography>
+            <Stack spacing={2} sx={{ mt: 2 }}>
+              <TextField
+                name="email"
+                type="email"
+                // placeholder="johndoe@email.com"
+                label="Email"
+              />
+              <TextField
+                name="password"
+                type="password"
+                // placeholder="password"
+                label="Password"
+              />
+            </Stack>
+            <LoadingButton
+              fullWidth
+              sx={{
+                mt: 3,
+                mb: 2,
+              }}
+              onClick={handleLogin}
+              loading={loading}
+            >
+              Log in
+            </LoadingButton>
+            <Typography
+              endDecorator={<Link href="/sign-up">Sign up</Link>}
+              fontSize="sm"
+              sx={{ alignSelf: "center" }}
+            >
+              Don't have an account?
+            </Typography>
+          </div>
+        </Sheet>
+      </Box>
+    </CssVarsProvider>
+  );
 }
 
-export default App
+export default App;
