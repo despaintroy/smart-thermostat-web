@@ -1,7 +1,9 @@
 import { CssVarsProvider } from '@mui/joy/styles'
 import useCurrentUser from 'hooks/useCurrentUser'
+import MainLayout from 'layouts/MainLayout'
 import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom'
 import theme from 'theme'
+import Dashboard from 'views/Dashboard'
 import Login from 'views/Login'
 
 // Unauthenticated routes
@@ -17,8 +19,18 @@ const unauthRouter = createBrowserRouter([
 const authRouter = createBrowserRouter([
 	{
 		path: '/',
-		element: <p>Home</p>,
+		element: <MainLayout />,
 		errorElement: <Navigate to='/' replace />,
+		children: [
+			{
+				index: true,
+				element: <Navigate to='/dashboard' replace />,
+			},
+			{
+				path: 'dashboard/',
+				element: <Dashboard />,
+			},
+		],
 	},
 ])
 
