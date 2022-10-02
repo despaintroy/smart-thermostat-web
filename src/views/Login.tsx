@@ -12,7 +12,9 @@ const Login: FC = () => {
 
   return (
     <Box sx={{ bgcolor: "background.body", minHeight: "100vh" }}>
-      <DarkModeToggle />
+      <Stack direction="row" sx={{ p: 2, justifyContent: "flex-end" }}>
+        <DarkModeToggle />
+      </Stack>
       <Sheet
         sx={{
           maxWidth: 400,
