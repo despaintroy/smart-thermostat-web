@@ -1,12 +1,12 @@
 import { Container } from '@mui/joy'
 import { FC } from 'react'
 
-const Dashboard: FC = () => {
+const Account: FC = () => {
 	return (
 		<Container>
-			<p>Dashboard</p>
+			<p>Account</p>
 		</Container>
 	)
 }
 
-export default Dashboard
+export default Account

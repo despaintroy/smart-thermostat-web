@@ -1,6 +1,7 @@
 import { Dashboard, Person } from '@mui/icons-material'
 import {
 	Box,
+	Container,
 	ListItemDecorator,
 	Stack,
 	Tab,
@@ -37,9 +38,22 @@ const MainLayout: FC = () => {
 
 	return (
 		<Stack sx={{ bgcolor: 'background.body', minHeight: '100vh' }}>
-			<Stack direction='row' sx={{ p: 2, justifyContent: 'flex-end' }}>
-				<DarkModeToggle />
-			</Stack>
+			<Box
+				sx={{
+					py: 2,
+					boxShadow: 'sm',
+					bgcolor: 'background.level1',
+				}}
+			>
+				<Container>
+					<Stack direction='row' sx={{ alignItems: 'center' }}>
+						<Typography component='h1' fontSize='xl' fontWeight='xl'>
+							Smart Thermostat
+						</Typography>
+						<DarkModeToggle sx={{ ml: 'auto' }} />
+					</Stack>
+				</Container>
+			</Box>
 
 			<Box sx={{ flexGrow: 1 }}>
 				<Outlet />

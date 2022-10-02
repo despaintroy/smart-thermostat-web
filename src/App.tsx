@@ -3,6 +3,7 @@ import useCurrentUser from 'hooks/useCurrentUser'
 import MainLayout from 'layouts/MainLayout'
 import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom'
 import theme from 'theme'
+import Account from 'views/Account'
 import Dashboard from 'views/Dashboard'
 import Login from 'views/Login'
 
@@ -32,7 +33,7 @@ const authRouter = createBrowserRouter([
 			},
 			{
 				path: 'account/',
-				element: <p>Account</p>,
+				element: <Account />,
 			},
 		],
 	},

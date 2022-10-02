@@ -1,8 +1,8 @@
 import { DarkMode, LightMode } from '@mui/icons-material'
-import { IconButton, useColorScheme } from '@mui/joy'
+import { IconButton, IconButtonProps, useColorScheme } from '@mui/joy'
 import { FC } from 'react'
 
-const DarkModeToggle: FC = () => {
+const DarkModeToggle: FC<IconButtonProps> = props => {
 	const { mode, setMode } = useColorScheme()
 
 	return (
@@ -15,6 +15,7 @@ const DarkModeToggle: FC = () => {
 					setMode('light')
 				}
 			}}
+			{...props}
 		>
 			{mode === 'light' ? <LightMode /> : <DarkMode />}
 		</IconButton>
